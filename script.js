@@ -355,14 +355,15 @@
         renderizarReceitas();
     }
 
-    window.excluirReceita = function(id) {
-        if (confirm('Tem certeza que deseja excluir esta receita?')) {
-            receitas = receitas.filter(r => r.id !== id);
-            localStorage.setItem('receitas', JSON.stringify(receitas));
-            modalDetalhes.style.display = 'none';
-            renderizarReceitas();
-        }
+    window.deletarReceita = function(id) {
+    if(confirm('Deseja realmente excluir esta receita?')) {
+        receitas = receitas.filter(r => r.id !== id);
+        localStorage.setItem('receitas', JSON.stringify(receitas));
+        modalDetalhes.style.display = 'none';
+        renderizarReceitas();
     }
+}
 
     // Renderizar receitas ao carregar a página
     renderizarReceitas();
+
